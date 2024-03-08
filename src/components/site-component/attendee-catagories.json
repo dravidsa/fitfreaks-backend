@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_site_component_attendee_catagories",
+  "info": {
+    "displayName": "attendee_catagories",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "catagory_name": {
+      "type": "string"
+    },
+    "catagory_desc": {
+      "type": "string"
+    }
+  }
+}

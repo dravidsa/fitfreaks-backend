@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_enrollments",
+  "info": {
+    "singularName": "event-enrollment",
+    "pluralName": "event-enrollments",
+    "displayName": "event_enrollment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "full_name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "attendee_catagory": {
+      "type": "string"
+    },
+    "event_category": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "emmergency_contact_name": {
+      "type": "string"
+    },
+    "emmergency_contact_number": {
+      "type": "string"
+    },
+    "t_shirt_size": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "BIB": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "BIB_Status": {
+      "type": "string"
+    },
+    "id_type": {
+      "type": "string"
+    },
+    "id_number": {
+      "type": "string"
+    },
+    "payment_method": {
+      "type": "string"
+    },
+    "payment_ref": {
+      "type": "string"
+    },
+    "payment_status": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": "integer"
+    }
+  }
+}

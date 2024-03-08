@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_site_component_event_categories",
+  "info": {
+    "displayName": "event_categories"
+  },
+  "options": {},
+  "attributes": {
+    "event_catagory": {
+      "type": "string"
+    },
+    "event_catagory_desc": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "tickets_allowed": {
+      "type": "integer"
+    }
+  }
+}

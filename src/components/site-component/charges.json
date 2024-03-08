@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_site_component_charges",
+  "info": {
+    "displayName": "charges",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "GST_flag": {
+      "type": "boolean"
+    },
+    "GST_Source": {
+      "type": "enumeration",
+      "enum": [
+        "event",
+        "customer"
+      ]
+    },
+    "GST": {
+      "type": "float"
+    },
+    "misc_charges": {
+      "type": "enumeration",
+      "enum": [
+        "no",
+        "percent",
+        "flat"
+      ]
+    },
+    "misc_charges_source": {
+      "type": "enumeration",
+      "enum": [
+        "event",
+        "customer"
+      ]
+    },
+    "misc_percent": {
+      "type": "float"
+    },
+    "misc_flat": {
+      "type": "integer"
+    }
+  }
+}

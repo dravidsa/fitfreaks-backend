@@ -1,0 +1,107 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coaches",
+  "info": {
+    "singularName": "coache",
+    "pluralName": "coaches",
+    "displayName": "Coaches",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "address": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "medialist": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "admin_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "sport": {
+      "type": "enumeration",
+      "enum": [
+        "Cycling",
+        "Swimming",
+        "Running",
+        "Triathlon",
+        "Gym ",
+        "Strength Training",
+        "Yoga "
+      ]
+    },
+    "hero": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Personal Trainer",
+        "Yoga Teacher",
+        "Runing Coach",
+        "Cycling Coah",
+        "Triathlon Trainer ",
+        "Dietician"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Individual",
+        "Club "
+      ]
+    }
+  }
+}

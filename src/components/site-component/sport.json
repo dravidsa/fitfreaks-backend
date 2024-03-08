@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_site_component_sports",
+  "info": {
+    "displayName": "sport",
+    "icon": "shirt"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
