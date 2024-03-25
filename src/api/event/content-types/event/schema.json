@@ -109,6 +109,9 @@
       "type": "component",
       "repeatable": false,
       "component": "site-component.charges"
+    },
+    "terms": {
+      "type": "text"
     }
   }
 }

@@ -29,7 +29,7 @@
     "attendee_catagory": {
       "type": "string"
     },
-    "event_category": {
+    "event_catagory": {
       "type": "string"
     },
     "gender": {
@@ -69,7 +69,7 @@
     "payment_method": {
       "type": "string"
     },
-    "payment_ref": {
+    "payment_id": {
       "type": "string"
     },
     "payment_status": {
@@ -77,6 +77,15 @@
     },
     "event_id": {
       "type": "integer"
+    },
+    "payment_order_id": {
+      "type": "string"
+    },
+    "payment_signature": {
+      "type": "string"
+    },
+    "blood_group": {
+      "type": "string"
     }
   }
 }

@@ -946,6 +946,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
       true
     >;
     charges: Attribute.Component<'site-component.charges'>;
+    terms: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -982,7 +983,7 @@ export interface ApiEventEnrollmentEventEnrollment
     mobile: Attribute.String;
     status: Attribute.String;
     attendee_catagory: Attribute.String;
-    event_category: Attribute.String;
+    event_catagory: Attribute.String;
     gender: Attribute.Enumeration<['Male', 'Female']>;
     emmergency_contact_name: Attribute.String;
     emmergency_contact_number: Attribute.String;
@@ -994,9 +995,12 @@ export interface ApiEventEnrollmentEventEnrollment
     id_type: Attribute.String;
     id_number: Attribute.String;
     payment_method: Attribute.String;
-    payment_ref: Attribute.String;
+    payment_id: Attribute.String;
     payment_status: Attribute.String;
     event_id: Attribute.Integer;
+    payment_order_id: Attribute.String;
+    payment_signature: Attribute.String;
+    blood_group: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1061,6 +1065,37 @@ export interface ApiGroupGroup extends Schema.CollectionType {
   };
 }
 
+export interface ApiTermsAndConditionTermsAndCondition
+  extends Schema.SingleType {
+  collectionName: 'terms_and_conditions';
+  info: {
+    singularName: 'terms-and-condition';
+    pluralName: 'terms-and-conditions';
+    displayName: 'Terms_and_conditions';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    tos_text: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::terms-and-condition.terms-and-condition',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::terms-and-condition.terms-and-condition',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1084,6 +1119,7 @@ declare module '@strapi/types' {
       'api::event.event': ApiEventEvent;
       'api::event-enrollment.event-enrollment': ApiEventEnrollmentEventEnrollment;
       'api::group.group': ApiGroupGroup;
+      'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
     }
   }
 }
