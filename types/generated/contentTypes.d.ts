@@ -875,6 +875,10 @@ export interface ApiCoacheCoache extends Schema.CollectionType {
       ]
     >;
     type: Attribute.Enumeration<['Individual', 'Club ']>;
+    Products: Attribute.Component<'site-component.products', true>;
+    insta_handle: Attribute.String;
+    Testimonials: Attribute.Component<'site-component.testimonial', true>;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -886,6 +890,40 @@ export interface ApiCoacheCoache extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::coache.coache',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactUsContactUs extends Schema.SingleType {
+  collectionName: 'contact_uses';
+  info: {
+    singularName: 'contact-us';
+    pluralName: 'contact-uses';
+    displayName: 'contact_us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contact_name: Attribute.String;
+    contact_number: Attribute.String;
+    contact_address: Attribute.String;
+    contatc_GPS: Attribute.String;
+    contact_email: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-us.contact-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-us.contact-us',
       'oneToOne',
       'admin::user'
     > &
@@ -947,6 +985,8 @@ export interface ApiEventEvent extends Schema.CollectionType {
     >;
     charges: Attribute.Component<'site-component.charges'>;
     terms: Attribute.Text;
+    location_GPS: Attribute.String;
+    location_address: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -984,9 +1024,9 @@ export interface ApiEventEnrollmentEventEnrollment
     status: Attribute.String;
     attendee_catagory: Attribute.String;
     event_catagory: Attribute.String;
-    gender: Attribute.Enumeration<['Male', 'Female']>;
-    emmergency_contact_name: Attribute.String;
-    emmergency_contact_number: Attribute.String;
+    gender: Attribute.Enumeration<['Male', 'Female', 'Others']>;
+    emergency_contact_name: Attribute.String;
+    emergency_contact_number: Attribute.String;
     t_shirt_size: Attribute.String;
     address: Attribute.String;
     BIB: Attribute.String;
@@ -1001,6 +1041,7 @@ export interface ApiEventEnrollmentEventEnrollment
     payment_order_id: Attribute.String;
     payment_signature: Attribute.String;
     blood_group: Attribute.String;
+    event_name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1116,6 +1157,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::blog.blog': ApiBlogBlog;
       'api::coache.coache': ApiCoacheCoache;
+      'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::event.event': ApiEventEvent;
       'api::event-enrollment.event-enrollment': ApiEventEnrollmentEventEnrollment;
       'api::group.group': ApiGroupGroup;

@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_uses",
+  "info": {
+    "singularName": "contact-us",
+    "pluralName": "contact-uses",
+    "displayName": "contact_us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contact_name": {
+      "type": "string"
+    },
+    "contact_number": {
+      "type": "string"
+    },
+    "contact_address": {
+      "type": "string"
+    },
+    "contatc_GPS": {
+      "type": "string"
+    },
+    "contact_email": {
+      "type": "string"
+    }
+  }
+}

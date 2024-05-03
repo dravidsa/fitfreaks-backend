@@ -53,6 +53,17 @@ export interface SiteComponentEventCategories extends Schema.Component {
   };
 }
 
+export interface SiteComponentProducts extends Schema.Component {
+  collectionName: 'components_site_component_products';
+  info: {
+    displayName: 'products';
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.String;
+  };
+}
+
 export interface SiteComponentSport extends Schema.Component {
   collectionName: 'components_site_component_sports';
   info: {
@@ -64,6 +75,32 @@ export interface SiteComponentSport extends Schema.Component {
   };
 }
 
+export interface SiteComponentTeam extends Schema.Component {
+  collectionName: 'components_site_component_teams';
+  info: {
+    displayName: 'team';
+  };
+  attributes: {
+    name: Attribute.String;
+    title: Attribute.String;
+    description: Attribute.String;
+    image: Attribute.Media;
+  };
+}
+
+export interface SiteComponentTestimonial extends Schema.Component {
+  collectionName: 'components_site_component_testimonials';
+  info: {
+    displayName: 'testimonial';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.String;
+    image: Attribute.Media;
+    name: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -71,7 +108,10 @@ declare module '@strapi/types' {
       'site-component.attendee-catagories': SiteComponentAttendeeCatagories;
       'site-component.charges': SiteComponentCharges;
       'site-component.event-categories': SiteComponentEventCategories;
+      'site-component.products': SiteComponentProducts;
       'site-component.sport': SiteComponentSport;
+      'site-component.team': SiteComponentTeam;
+      'site-component.testimonial': SiteComponentTestimonial;
     }
   }
 }

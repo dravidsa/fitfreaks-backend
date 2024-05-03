@@ -36,13 +36,14 @@
       "type": "enumeration",
       "enum": [
         "Male",
-        "Female"
+        "Female",
+        "Others"
       ]
     },
-    "emmergency_contact_name": {
+    "emergency_contact_name": {
       "type": "string"
     },
-    "emmergency_contact_number": {
+    "emergency_contact_number": {
       "type": "string"
     },
     "t_shirt_size": {
@@ -85,6 +86,9 @@
       "type": "string"
     },
     "blood_group": {
+      "type": "string"
+    },
+    "event_name": {
       "type": "string"
     }
   }

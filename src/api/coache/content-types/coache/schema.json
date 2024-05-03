@@ -102,6 +102,22 @@
         "Individual",
         "Club "
       ]
+    },
+    "Products": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site-component.products"
+    },
+    "insta_handle": {
+      "type": "string"
+    },
+    "Testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site-component.testimonial"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }

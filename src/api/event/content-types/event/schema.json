@@ -112,6 +112,12 @@
     },
     "terms": {
       "type": "text"
+    },
+    "location_GPS": {
+      "type": "string"
+    },
+    "location_address": {
+      "type": "string"
     }
   }
 }
