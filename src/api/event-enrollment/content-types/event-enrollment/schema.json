@@ -46,7 +46,7 @@
     "emergency_contact_number": {
       "type": "string"
     },
-    "t_shirt_size": {
+    "tshirt_size": {
       "type": "string"
     },
     "address": {
@@ -90,6 +90,27 @@
     },
     "event_name": {
       "type": "string"
+    },
+    "group_name": {
+      "type": "string"
+    },
+    "dob": {
+      "type": "string"
+    },
+    "accomodation_option": {
+      "type": "string"
+    },
+    "profession": {
+      "type": "string"
+    },
+    "gst": {
+      "type": "decimal"
+    },
+    "platform_fees": {
+      "type": "decimal"
+    },
+    "total_price": {
+      "type": "decimal"
     }
   }
 }

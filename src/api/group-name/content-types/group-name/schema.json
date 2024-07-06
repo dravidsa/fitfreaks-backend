@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "group_names",
+  "info": {
+    "singularName": "group-name",
+    "pluralName": "group-names",
+    "displayName": "group_name",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "group_name": {
+      "type": "string"
+    }
+  }
+}

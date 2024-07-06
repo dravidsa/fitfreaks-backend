@@ -987,6 +987,23 @@ export interface ApiEventEvent extends Schema.CollectionType {
     terms: Attribute.Text;
     location_GPS: Attribute.String;
     location_address: Attribute.String;
+    status: Attribute.Enumeration<['Active', 'Inactive']>;
+    accommodation: Attribute.Enumeration<['Single Room', 'Shared Room']>;
+    GST_flag: Attribute.Boolean;
+    GST_percent: Attribute.Decimal;
+    GST_source: Attribute.Enumeration<['End_User', 'Event_organizer']>;
+    platform_fees_flag: Attribute.Boolean;
+    platform_fees_percent: Attribute.Decimal;
+    platform_fees_source: Attribute.Enumeration<
+      ['End_User', 'Event_organizer']
+    >;
+    event_message: Attribute.String;
+    tshirt_flag: Attribute.Boolean;
+    tshirt_sizes: Attribute.String;
+    accomodation_options: Attribute.String;
+    accomodation_flag: Attribute.Boolean;
+    dob_flag: Attribute.Boolean;
+    profession_flag: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1027,7 +1044,7 @@ export interface ApiEventEnrollmentEventEnrollment
     gender: Attribute.Enumeration<['Male', 'Female', 'Others']>;
     emergency_contact_name: Attribute.String;
     emergency_contact_number: Attribute.String;
-    t_shirt_size: Attribute.String;
+    tshirt_size: Attribute.String;
     address: Attribute.String;
     BIB: Attribute.String;
     comment: Attribute.String;
@@ -1042,6 +1059,13 @@ export interface ApiEventEnrollmentEventEnrollment
     payment_signature: Attribute.String;
     blood_group: Attribute.String;
     event_name: Attribute.String;
+    group_name: Attribute.String;
+    dob: Attribute.String;
+    accomodation_option: Attribute.String;
+    profession: Attribute.String;
+    gst: Attribute.Decimal;
+    platform_fees: Attribute.Decimal;
+    total_price: Attribute.Decimal;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1088,6 +1112,9 @@ export interface ApiGroupGroup extends Schema.CollectionType {
         'Hiking'
       ]
     >;
+    listing_in_groups: Attribute.Boolean;
+    group_hero_image: Attribute.Media;
+    tagline: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1099,6 +1126,37 @@ export interface ApiGroupGroup extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::group.group',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGroupNameGroupName extends Schema.CollectionType {
+  collectionName: 'group_names';
+  info: {
+    singularName: 'group-name';
+    pluralName: 'group-names';
+    displayName: 'group_name';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    group_name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::group-name.group-name',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::group-name.group-name',
       'oneToOne',
       'admin::user'
     > &
@@ -1161,6 +1219,7 @@ declare module '@strapi/types' {
       'api::event.event': ApiEventEvent;
       'api::event-enrollment.event-enrollment': ApiEventEnrollmentEventEnrollment;
       'api::group.group': ApiGroupGroup;
+      'api::group-name.group-name': ApiGroupNameGroupName;
       'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
     }
   }

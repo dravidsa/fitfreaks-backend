@@ -48,6 +48,23 @@
         "Triathlon",
         "Hiking"
       ]
+    },
+    "listing_in_groups": {
+      "type": "boolean"
+    },
+    "group_hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tagline": {
+      "type": "string"
     }
   }
 }

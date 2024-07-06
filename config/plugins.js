@@ -1,5 +1,9 @@
 module.exports = ({ env }) => ({
   // ...
+    'export-csv': {
+      enabled: true,
+      resolve: './src/plugins/export-csv'
+    },
   email: {
     config: {
       provider: 'nodemailer',

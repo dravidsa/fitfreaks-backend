@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_site_component_tshirt_sizes",
+  "info": {
+    "displayName": "tshirt_sizes",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "size": {
+      "type": "string"
+    }
+  }
+}

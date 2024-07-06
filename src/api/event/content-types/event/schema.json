@@ -118,6 +118,67 @@
     },
     "location_address": {
       "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Active",
+        "Inactive"
+      ]
+    },
+    "accommodation": {
+      "type": "enumeration",
+      "enum": [
+        "Single Room",
+        "Shared Room"
+      ]
+    },
+    "GST_flag": {
+      "type": "boolean"
+    },
+    "GST_percent": {
+      "type": "decimal"
+    },
+    "GST_source": {
+      "type": "enumeration",
+      "enum": [
+        "End_User",
+        "Event_organizer"
+      ]
+    },
+    "platform_fees_flag": {
+      "type": "boolean"
+    },
+    "platform_fees_percent": {
+      "type": "decimal"
+    },
+    "platform_fees_source": {
+      "type": "enumeration",
+      "enum": [
+        "End_User",
+        "Event_organizer"
+      ]
+    },
+    "event_message": {
+      "type": "string"
+    },
+    "tshirt_flag": {
+      "type": "boolean"
+    },
+    "tshirt_sizes": {
+      "type": "string"
+    },
+    "accomodation_options": {
+      "type": "string"
+    },
+    "accomodation_flag": {
+      "type": "boolean"
+    },
+    "dob_flag": {
+      "type": "boolean"
+    },
+    "profession_flag": {
+      "type": "boolean"
     }
   }
 }

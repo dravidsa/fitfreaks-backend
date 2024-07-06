@@ -53,6 +53,15 @@ export interface SiteComponentEventCategories extends Schema.Component {
   };
 }
 
+export interface SiteComponentGroupNames extends Schema.Component {
+  collectionName: 'components_site_component_group_names';
+  info: {
+    displayName: 'group_names';
+    description: '';
+  };
+  attributes: {};
+}
+
 export interface SiteComponentProducts extends Schema.Component {
   collectionName: 'components_site_component_products';
   info: {
@@ -101,6 +110,17 @@ export interface SiteComponentTestimonial extends Schema.Component {
   };
 }
 
+export interface SiteComponentTshirtSizes extends Schema.Component {
+  collectionName: 'components_site_component_tshirt_sizes';
+  info: {
+    displayName: 'tshirt_sizes';
+    description: '';
+  };
+  attributes: {
+    size: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -108,10 +128,12 @@ declare module '@strapi/types' {
       'site-component.attendee-catagories': SiteComponentAttendeeCatagories;
       'site-component.charges': SiteComponentCharges;
       'site-component.event-categories': SiteComponentEventCategories;
+      'site-component.group-names': SiteComponentGroupNames;
       'site-component.products': SiteComponentProducts;
       'site-component.sport': SiteComponentSport;
       'site-component.team': SiteComponentTeam;
       'site-component.testimonial': SiteComponentTestimonial;
+      'site-component.tshirt-sizes': SiteComponentTshirtSizes;
     }
   }
 }
