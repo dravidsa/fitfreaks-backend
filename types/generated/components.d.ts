@@ -44,10 +44,11 @@ export interface SiteComponentEventCategories extends Schema.Component {
   collectionName: 'components_site_component_event_categories';
   info: {
     displayName: 'event_categories';
+    description: '';
   };
   attributes: {
     event_catagory: Attribute.String;
-    event_catagory_desc: Attribute.String;
+    event_catagory_desc: Attribute.Text;
     price: Attribute.Integer;
     tickets_allowed: Attribute.Integer;
   };

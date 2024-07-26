@@ -111,6 +111,9 @@
     },
     "total_price": {
       "type": "decimal"
+    },
+    "document_url": {
+      "type": "string"
     }
   }
 }

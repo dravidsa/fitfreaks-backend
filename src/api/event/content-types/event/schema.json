@@ -179,6 +179,9 @@
     },
     "profession_flag": {
       "type": "boolean"
+    },
+    "document_flag": {
+      "type": "boolean"
     }
   }
 }

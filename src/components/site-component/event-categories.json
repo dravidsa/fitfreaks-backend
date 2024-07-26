@@ -1,7 +1,8 @@
 {
   "collectionName": "components_site_component_event_categories",
   "info": {
-    "displayName": "event_categories"
+    "displayName": "event_categories",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,7 +10,7 @@
       "type": "string"
     },
     "event_catagory_desc": {
-      "type": "string"
+      "type": "text"
     },
     "price": {
       "type": "integer"

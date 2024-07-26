@@ -1004,6 +1004,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     accomodation_flag: Attribute.Boolean;
     dob_flag: Attribute.Boolean;
     profession_flag: Attribute.Boolean;
+    document_flag: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1066,6 +1067,7 @@ export interface ApiEventEnrollmentEventEnrollment
     gst: Attribute.Decimal;
     platform_fees: Attribute.Decimal;
     total_price: Attribute.Decimal;
+    document_url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
