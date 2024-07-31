@@ -1005,6 +1005,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     dob_flag: Attribute.Boolean;
     profession_flag: Attribute.Boolean;
     document_flag: Attribute.Boolean;
+    terms_flag: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

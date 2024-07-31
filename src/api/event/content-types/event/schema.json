@@ -182,6 +182,9 @@
     },
     "document_flag": {
       "type": "boolean"
+    },
+    "terms_flag": {
+      "type": "boolean"
     }
   }
 }
