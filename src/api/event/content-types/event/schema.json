@@ -185,6 +185,9 @@
     },
     "terms_flag": {
       "type": "boolean"
+    },
+    "gpsMap": {
+      "type": "text"
     }
   }
 }

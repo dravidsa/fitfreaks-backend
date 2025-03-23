@@ -1006,6 +1006,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     profession_flag: Attribute.Boolean;
     document_flag: Attribute.Boolean;
     terms_flag: Attribute.Boolean;
+    gpsMap: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -9,6 +9,7 @@ module.exports = [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
+  'global::google-auth',  // Add this line
   {
     name: 'strapi::cors',
     config: {
