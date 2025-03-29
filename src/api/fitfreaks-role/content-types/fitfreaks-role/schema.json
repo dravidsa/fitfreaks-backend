@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fitfreaks_roles",
+  "info": {
+    "singularName": "fitfreaks-role",
+    "pluralName": "fitfreaks-roles",
+    "displayName": "fitfreaks_role"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "role_name": {
+      "type": "enumeration",
+      "enum": [
+        "platform_admin",
+        "group_admin",
+        "event_organiser",
+        "marchant",
+        "coach"
+      ]
+    }
+  }
+}

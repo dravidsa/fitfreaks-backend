@@ -969,8 +969,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
         'party',
         'concert'
       ]
-    > &
-      Attribute.Required;
+    >;
     organizer: Attribute.String & Attribute.Required;
     sportType: Attribute.Enumeration<
       ['Running', 'Walking', 'Cycling', 'Swimming', 'Triathlon', 'Hiking']
@@ -1007,6 +1006,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     document_flag: Attribute.Boolean;
     terms_flag: Attribute.Boolean;
     gpsMap: Attribute.Text;
+    event_organiser: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1081,6 +1081,84 @@ export interface ApiEventEnrollmentEventEnrollment
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::event-enrollment.event-enrollment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFitfreaksRoleFitfreaksRole extends Schema.CollectionType {
+  collectionName: 'fitfreaks_roles';
+  info: {
+    singularName: 'fitfreaks-role';
+    pluralName: 'fitfreaks-roles';
+    displayName: 'fitfreaks_role';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    role_name: Attribute.Enumeration<
+      ['platform_admin', 'group_admin', 'event_organiser', 'marchant', 'coach']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fitfreaks-role.fitfreaks-role',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::fitfreaks-role.fitfreaks-role',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFitfreaksUserFitfreaksUser extends Schema.CollectionType {
+  collectionName: 'fitfreaks_users';
+  info: {
+    singularName: 'fitfreaks-user';
+    pluralName: 'fitfreaks-users';
+    displayName: 'fitfreaks_user';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    mobile: Attribute.Integer;
+    expertise: Attribute.String;
+    city: Attribute.String;
+    address: Attribute.String;
+    role: Attribute.Enumeration<
+      [
+        'content_creator',
+        'group_admin',
+        'event_organiser',
+        'coach',
+        'merchant',
+        'platform_admin'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fitfreaks-user.fitfreaks-user',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::fitfreaks-user.fitfreaks-user',
       'oneToOne',
       'admin::user'
     > &
@@ -1222,6 +1300,8 @@ declare module '@strapi/types' {
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::event.event': ApiEventEvent;
       'api::event-enrollment.event-enrollment': ApiEventEnrollmentEventEnrollment;
+      'api::fitfreaks-role.fitfreaks-role': ApiFitfreaksRoleFitfreaksRole;
+      'api::fitfreaks-user.fitfreaks-user': ApiFitfreaksUserFitfreaksUser;
       'api::group.group': ApiGroupGroup;
       'api::group-name.group-name': ApiGroupNameGroupName;
       'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;

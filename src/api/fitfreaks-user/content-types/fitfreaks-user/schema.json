@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fitfreaks_users",
+  "info": {
+    "singularName": "fitfreaks-user",
+    "pluralName": "fitfreaks-users",
+    "displayName": "fitfreaks_user",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "mobile": {
+      "type": "integer"
+    },
+    "expertise": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "content_creator",
+        "group_admin",
+        "event_organiser",
+        "coach",
+        "merchant",
+        "platform_admin"
+      ]
+    }
+  }
+}

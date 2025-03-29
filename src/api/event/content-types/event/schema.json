@@ -78,7 +78,7 @@
         "party",
         "concert"
       ],
-      "required": true
+      "required": false
     },
     "organizer": {
       "type": "string",
@@ -188,6 +188,9 @@
     },
     "gpsMap": {
       "type": "text"
+    },
+    "event_organiser": {
+      "type": "string"
     }
   }
 }
