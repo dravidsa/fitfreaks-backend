@@ -791,6 +791,51 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface PluginReactIconsIconlibrary extends Schema.CollectionType {
+  collectionName: 'iconlibrary';
+  info: {
+    singularName: 'iconlibrary';
+    pluralName: 'iconlibraries';
+    displayName: 'IconLibrary';
+  };
+  options: {
+    draftAndPublish: false;
+    comment: '';
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    abbreviation: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        maxLength: 3;
+      }>;
+    isEnabled: Attribute.Boolean & Attribute.DefaultTo<true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::react-icons.iconlibrary',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::react-icons.iconlibrary',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -879,6 +924,11 @@ export interface ApiCoacheCoache extends Schema.CollectionType {
     insta_handle: Attribute.String;
     Testimonials: Attribute.Component<'site-component.testimonial', true>;
     slug: Attribute.String;
+    groups: Attribute.Relation<
+      'api::coache.coache',
+      'manyToMany',
+      'api::group.group'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1197,6 +1247,29 @@ export interface ApiGroupGroup extends Schema.CollectionType {
     listing_in_groups: Attribute.Boolean;
     group_hero_image: Attribute.Media;
     tagline: Attribute.String;
+    twitter: Attribute.String;
+    Facebook: Attribute.String;
+    instagram: Attribute.String;
+    email: Attribute.String;
+    phone: Attribute.String;
+    address: Attribute.String;
+    team: Attribute.Component<'site-component.our-team', true>;
+    approach: Attribute.Component<'site-component.our-approach', true>;
+    services: Attribute.Component<'site-component.products', true>;
+    events: Attribute.Relation<
+      'api::group.group',
+      'oneToMany',
+      'api::event.event'
+    >;
+    coaches: Attribute.Relation<
+      'api::group.group',
+      'manyToMany',
+      'api::coache.coache'
+    >;
+    group_logo: Attribute.Media;
+    achievements: Attribute.Component<'site-component.achievements', true>;
+    gallery: Attribute.Component<'site-component.gallery', true>;
+    testimonials: Attribute.Component<'site-component.testimonial', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1295,6 +1368,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'plugin::react-icons.iconlibrary': PluginReactIconsIconlibrary;
       'api::blog.blog': ApiBlogBlog;
       'api::coache.coache': ApiCoacheCoache;
       'api::contact-us.contact-us': ApiContactUsContactUs;

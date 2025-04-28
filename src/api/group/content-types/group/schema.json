@@ -65,6 +65,76 @@
     },
     "tagline": {
       "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "Facebook": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "team": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site-component.our-team"
+    },
+    "approach": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site-component.our-approach"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site-component.products"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event"
+    },
+    "coaches": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::coache.coache",
+      "inversedBy": "groups"
+    },
+    "group_logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "achievements": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site-component.achievements"
+    },
+    "gallery": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site-component.gallery"
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site-component.testimonial"
     }
   }
 }

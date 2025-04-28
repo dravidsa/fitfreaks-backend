@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_site_component_our_teams",
+  "info": {
+    "displayName": "our_team"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "achivements": {
+      "type": "text"
+    }
+  }
+}

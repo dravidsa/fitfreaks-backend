@@ -17,6 +17,9 @@
     },
     "tickets_allowed": {
       "type": "integer"
+    },
+    "gpxFile": {
+      "type": "text"
     }
   }
 }

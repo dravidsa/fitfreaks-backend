@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_site_component_media_gallaries",
+  "info": {
+    "displayName": "media_gallary"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

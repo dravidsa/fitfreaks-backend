@@ -11,6 +11,18 @@ export interface DetailsDetails extends Schema.Component {
   };
 }
 
+export interface SiteComponentAchievements extends Schema.Component {
+  collectionName: 'components_site_component_achievements';
+  info: {
+    displayName: 'achievements';
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.String;
+    image: Attribute.Media;
+  };
+}
+
 export interface SiteComponentAttendeeCatagories extends Schema.Component {
   collectionName: 'components_site_component_attendee_catagories';
   info: {
@@ -51,6 +63,19 @@ export interface SiteComponentEventCategories extends Schema.Component {
     event_catagory_desc: Attribute.Text;
     price: Attribute.Integer;
     tickets_allowed: Attribute.Integer;
+    gpxFile: Attribute.Text;
+  };
+}
+
+export interface SiteComponentGallery extends Schema.Component {
+  collectionName: 'components_site_component_galleries';
+  info: {
+    displayName: 'gallery';
+  };
+  attributes: {
+    name: Attribute.String;
+    image: Attribute.Media;
+    description: Attribute.String;
   };
 }
 
@@ -63,14 +88,55 @@ export interface SiteComponentGroupNames extends Schema.Component {
   attributes: {};
 }
 
-export interface SiteComponentProducts extends Schema.Component {
-  collectionName: 'components_site_component_products';
+export interface SiteComponentMediaGallary extends Schema.Component {
+  collectionName: 'components_site_component_media_gallaries';
   info: {
-    displayName: 'products';
+    displayName: 'media_gallary';
+  };
+  attributes: {
+    description: Attribute.String;
+    date: Attribute.Date;
+    image: Attribute.Media;
+  };
+}
+
+export interface SiteComponentOurApproach extends Schema.Component {
+  collectionName: 'components_site_component_our_approaches';
+  info: {
+    displayName: 'our_approach';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.String;
+    name: Attribute.String;
+    image: Attribute.Media;
+    icon: Attribute.String & Attribute.CustomField<'plugin::react-icons.icon'>;
+  };
+}
+
+export interface SiteComponentOurTeam extends Schema.Component {
+  collectionName: 'components_site_component_our_teams';
+  info: {
+    displayName: 'our_team';
   };
   attributes: {
     name: Attribute.String;
     description: Attribute.String;
+    image: Attribute.Media;
+    achivements: Attribute.Text;
+  };
+}
+
+export interface SiteComponentProducts extends Schema.Component {
+  collectionName: 'components_site_component_products';
+  info: {
+    displayName: 'services';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.String;
+    image: Attribute.Media;
   };
 }
 
@@ -126,10 +192,15 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'details.details': DetailsDetails;
+      'site-component.achievements': SiteComponentAchievements;
       'site-component.attendee-catagories': SiteComponentAttendeeCatagories;
       'site-component.charges': SiteComponentCharges;
       'site-component.event-categories': SiteComponentEventCategories;
+      'site-component.gallery': SiteComponentGallery;
       'site-component.group-names': SiteComponentGroupNames;
+      'site-component.media-gallary': SiteComponentMediaGallary;
+      'site-component.our-approach': SiteComponentOurApproach;
+      'site-component.our-team': SiteComponentOurTeam;
       'site-component.products': SiteComponentProducts;
       'site-component.sport': SiteComponentSport;
       'site-component.team': SiteComponentTeam;
